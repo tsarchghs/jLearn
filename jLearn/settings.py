@@ -36,6 +36,7 @@ LOGIN_REDIRECT_URL = "/users/"
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 INSTALLED_APPS = [
+    'home',
 	'users',
 	'bootstrapform',
 	'Quiz',
@@ -126,7 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATICFILES_DIRS = [
-    '/home/gjergj/Desktop/jLearn/Quiz/static/',
+    os.path.join(BASE_DIR, 'Quiz/static'),
 ]
 STATIC_URL = '/static/'
 
