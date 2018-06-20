@@ -11,7 +11,7 @@ from django.contrib import messages
 
 def custom_login(request,**kwargs):
 	if request.user.is_authenticated:
-		return redirect("/users/")
+		return redirect("/home")
 	elif request.method == "POST":            
 		username=request.POST.get("username")
 		password = request.POST.get("password")                     
