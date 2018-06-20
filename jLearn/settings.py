@@ -28,9 +28,15 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+LOGIN_URL = "/users/login"
+LOGIN_REDIRECT_URL = "/users/"
 # Application definition
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 INSTALLED_APPS = [
+	'users',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
