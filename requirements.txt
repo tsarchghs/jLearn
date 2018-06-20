@@ -1,0 +1,5 @@
+Django==2.0.6
+django-bootstrap-form==3.4
+Pillow==5.1.0
+pytz==2018.4
+wheel==0.24.0
