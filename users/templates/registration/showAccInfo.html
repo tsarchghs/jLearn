@@ -1,0 +1,30 @@
+{% extends "pages/base.html" %}
+
+{% block content %}
+<body>
+		<h3 style="text-align: center;">Account Informations</h3>
+	  <div class="form-group center_div">
+	    <label for="first_name">First Name: {{ user.first_name }}</label> 
+	  </div>
+	  <div class="form-group center_div"> 
+	    <label for="last_name">Last Name: {{ user.last_name}} </label>
+	  </div>
+	  <div class="form-group center_div"> 
+	    <label for="email">Email: {{ user.email}} </label>
+	  </div>
+	  <div class="form-group center_div">
+	    <label for="username">Username: {{ user.username }}</label>
+	  </div>
+	  <p></p>
+	  <div class="col-md-11 text-center">
+	  <a href="/users/account/edit/{{ user.id }}">
+	  		<button style="width: fixed;" type="submit" class="btn btn btn-success">Change Personal Info</button>
+	  </a>
+	   <a href="/users/account/change_password">
+	   		<button style="width:fixed;" type="button" class="btn btn btn-primary">Change Password</button>
+	   	</a>
+
+	   </div>
+</body>
+
+{% endblock content %}
