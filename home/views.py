@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from Quiz.models import Category,Quiz #,Question,Answer
 from django.contrib.auth import authenticate
 from django.contrib.auth.views import login
+from django.shortcuts import redirect
 
 # Create your views here.
 
@@ -22,3 +23,6 @@ def home(request):
 			return render(request,"home.html",{'invalid': True })
 	else:
 		return render(request,"home.html",context)
+
+def redirectToHome(request):
+	return redirect("/home")
