@@ -10,6 +10,9 @@
         <script src="{% static 'home/base.js' %}" type="text/javascript"></script>
         <title>{% block title %}{% endblock title %}</title>
         {% block head %} {% endblock head %}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+
     </head>
 
     <body>
@@ -58,6 +61,23 @@
                             </ul>
                         </li>
                     </ul>
+                    {% if user.is_authenticated %}
+                       <li class="upper-links"><a class="links" href="/auth/logout">Logout</a>
+                        </li>    
+                    {% else %}
+                        <form method="POST" class="form-inline ml-auto"> {% csrf_token %}
+                            <div class="input-group"> <span class="input-group-addon"><i class="fa fa-user" style="font-size:20px;"></i></span>
+                                <input
+                                id="username" type="username" class="form-control" name="username" value="" placeholder="Username">
+                            </div>
+                            <div style="margin:5px;" class="input-group"> <span class="input-group-addon"><i class="fa fa-unlock-alt" style="font-size:20px;"></i></span>
+                                <input
+                                id="password" type="password" class="form-control" name="password" value=""
+                                placeholder="Password">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+                    {% endif %}
                 </div>
                 <div class="row row2">
                     <div class="col-md-2">
@@ -94,6 +114,7 @@
             <a
             href="#">Link</a> <a href="http://clashhacks.in/">Link</a>
         </div>
+
         {% block content %} {% endblock content %}
     </body>
 </html>
