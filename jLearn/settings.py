@@ -37,9 +37,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 INSTALLED_APPS = [
     'home',
-	'users',
 	'bootstrapform',
 	'Quiz',
+    "authentication",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
