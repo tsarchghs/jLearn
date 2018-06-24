@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from Quiz.models import Category,Quiz #,Question,Answer
 
 # Create your views here.
-@login_required
+
 def home(request):
 	quizzes = Quiz.objects.all()
 	for quiz in quizzes:
