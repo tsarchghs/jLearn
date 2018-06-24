@@ -42,24 +42,6 @@
 
                             </a>
                         </li>
-                        <li class="upper-links dropdown"><a class="links" href="#">Dropdown</a>
-                            <ul class="dropdown-menu">
-                                <li class="profile-li dropdown-item"><a class="profile-links" href="#">Link</a>
-                                </li>
-                                <li class="profile-li dropdown-item"><a class="profile-links" href="#">Link</a>
-                                </li>
-                                <li class="profile-li dropdown-item"><a class="profile-links" href="#">Link</a>
-                                </li>
-                                <li class="profile-li dropdown-item"><a class="profile-links" href="#">Link</a>
-                                </li>
-                                <li class="profile-li dropdown-item"><a class="profile-links" href="#">Link</a>
-                                </li>
-                                <li class="profile-li dropdown-item"><a class="profile-links" href="#">Link</a>
-                                </li>
-                                <li class="profile-li dropdown-item"><a class="profile-links" href="#">Link</a>
-                                </li>
-                            </ul>
-                        </li>
                     </ul>
                     {% if user.is_authenticated %}
                        <li class="upper-links"><a class="links" href="/auth/logout">Logout</a>
@@ -76,6 +58,7 @@
                                 placeholder="Password">
                             </div>
                             <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
                         </form>
                     {% endif %}
                 </div>
@@ -109,10 +92,10 @@
             <div class="container" style="background-color: #2874f0; padding-top: 10px;"> <span class="sidenav-heading">Home</span>
          <a href="javascript:void(0)"
                 class="closebtn" onclick="closeNav()">&#xD7;</a>
-            </div> <a href="http://clashhacks.in/">Link</a>
+            </div> <a href="" >Link</a>
          <a href="#">Link</a>
             <a
-            href="#">Link</a> <a href="http://clashhacks.in/">Link</a>
+            href="#">Link</a> <a href="#" >Link</a>
         </div>
 
         {% block content %} {% endblock content %}
