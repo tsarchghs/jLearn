@@ -16,6 +16,7 @@ class Quiz(models.Model):
 	description = models.TextField(max_length=1000)
 	title = models.CharField(max_length=100)
 	photo = models.ImageField(upload_to="quiz/photos")
+	status = models.CharField(max_length=1,choices=(("1","Active"),("0","Inactive")))
 	def __str__(self):
 		return self.title
 
