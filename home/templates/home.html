@@ -7,7 +7,11 @@
 		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 {% endblock head %}
 {% block content %}
-
+	{% if invalid %}
+		<div style="text-align: center;" class="alert alert-danger" role="alert">
+		  Username or Password is wrong! Try again.
+		</div>
+	{% endif %}
 	<div class="ui segment" style="margin-bottom: 0em !important;">
 
 	    <!-- Tarjeta de presentacion -->
