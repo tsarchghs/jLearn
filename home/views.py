@@ -8,7 +8,7 @@ from django.shortcuts import redirect
 # Create your views here.
 
 def home(request):
-	quizzes = Quiz.objects.all()
+	quizzes = Quiz.objects.filter(status="1")
 	for quiz in quizzes:
 		if len(quiz.description) > 241:
 			quiz.description = quiz.description[:237] + "..."
