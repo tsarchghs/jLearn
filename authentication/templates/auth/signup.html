@@ -3,7 +3,12 @@
 <div class="container" style="margin-top: 50px;">
     <div class="row">
         <div class="col-12 col-md-8 col-lg-6 offset-sm-2 offset-md-3">
-            <form role="form">
+            {% for error,message in form.errors.items %}
+                <div style="text-align: center;" class="alert alert-danger" role="alert">
+                    {{error}} {{message}}
+                </div>
+            {% endfor %}
+            <form role="form" method="POST" action="{% url 'signup' %}"> {% csrf_token %}
                 	<h2>Please Sign Up <small>It&apos;s free and always will be.</small></h2>
                 <hr class="colorgraph">
                 <div class="row">
@@ -21,7 +26,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="display_name" id="display_name" class="form-control form-control-lg"
+                    <input type="text" name="username" id="display_name" class="form-control form-control-lg"
                     placeholder="Username" tabindex="3">
                 </div>
                 <div class="form-group">
@@ -31,13 +36,13 @@
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-6">
                         <div class="form-group">
-                            <input type="password" name="password" id="password" class="form-control form-control-lg"
+                            <input type="password" name="password1" id="password" class="form-control form-control-lg"
                             placeholder="Password" tabindex="5">
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-6">
                         <div class="form-group">
-                            <input type="password" name="password_confirmation" id="password_confirmation"
+                            <input type="password" name="password2" id="password2"
                             class="form-control form-control-lg" placeholder="Confirm Password" tabindex="6">
                         </div>
                     </div>
@@ -58,10 +63,10 @@
                 <hr class="colorgraph">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <input type="submit" value="Register" class="btn btn-primary btn-block btn-lg"
+                       <input type="submit" value="Sign Up" class="btn btn-primary btn-block btn-lg"
                         tabindex="7">
                     </div>
-                    <div class="col-12 col-lg-6"><a href="#" class="btn btn-success btn-block btn-lg">Sign In</a>
+                    <div class="col-12 col-lg-6"><a class="btn btn-success btn-block btn-lg">Sign In</a>
                     </div>
                 </div>
             </form>
