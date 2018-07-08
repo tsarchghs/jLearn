@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 
-def custom_login(request,context):
+def custom_login(request,template,context):
 	username=request.POST.get("username")
 	password = request.POST.get("password")                     
 	user = authenticate(request, username=username, password=password)
@@ -13,7 +13,7 @@ def custom_login(request,context):
 		return login(request)
 	else:
 		context["invalid"] = True
-		return render(request,"home/home.html",context)
+		return render(request,template,context)
 
 def signup(request):
 	if request.method == 'POST':
@@ -23,7 +23,7 @@ def signup(request):
 			username = form.cleaned_data.get('username')
 			raw_password = form.cleaned_data.get('password1')
 			user = authenticate(username=username, password=raw_password)
-			return render(request, 'auth/signin.html', {"successfull":True})
+			return render(request, 'auth/signup.html', {'form': form,"successfully":True})
 		else:
 			return render(request, 'auth/signup.html', {'form': form})
 	else:

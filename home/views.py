@@ -12,7 +12,7 @@ def home(request):
 			quiz.description = quiz.description[:237] + "..."
 	context = {"quizzes":quizzes}
 	if request.method == "POST":
-		return auth_views.custom_login(request,context)
+		return auth_views.custom_login(request,"home/home.html",context)
 	else:
 		return render(request,"home/home.html",context)
 
