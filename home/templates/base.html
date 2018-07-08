@@ -47,7 +47,7 @@
                        <li class="upper-links"><a class="links" href="/auth/logout">Logout</a>
                         </li>    
                     {% else %}
-                        <form method="POST" class="form-inline ml-auto"> {% csrf_token %}
+                        <form method="POST" action="{% url 'home' %}" class="form-inline ml-auto"> {% csrf_token %}
                             <div class="input-group"> <span class="input-group-addon"><i class="fa fa-user" style="font-size:20px;"></i></span>
                                 <input
                                 id="username" type="username" class="form-control" name="username" value="" placeholder="Username">
@@ -58,7 +58,7 @@
                                 placeholder="Password">
                             </div>
                             <button type="submit" class="btn btn-primary">Login</button>
-                            <button style="margin: 5px;" type="button" class="btn btn-primary">Sign Up</button>
+                            <a href="{% url 'signup' %}"><button style="margin: 5px;" type="button" class="btn btn-primary">Sign Up</button></a>
                         </form>
                     {% endif %}
                 </div>
@@ -98,6 +98,6 @@
             href="#">Link</a> <a href="#" >Link</a>
         </div>
 
-        {% block content %} {% endblock content %}
+        {% block body %} {% endblock body %}
     </body>
 </html>

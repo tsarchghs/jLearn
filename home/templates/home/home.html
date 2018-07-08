@@ -6,8 +6,9 @@
 		<script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
 		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 {% endblock head %}
-{% block content %}
-	{% if invalid %}
+{% block body %}
+
+	{% if invalid %} 
 		<div style="text-align: center;" class="alert alert-danger" role="alert">
 		  Username or Password is wrong! Try again.
 		</div>
@@ -45,4 +46,4 @@
 
 	    </div>
 	</div>
-{% endblock content %}
+{% endblock body %}
