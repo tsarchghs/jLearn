@@ -8,6 +8,11 @@
                     {{error}} {{message}}
                 </div>
             {% endfor %}
+            {% if successfully %}
+                <div style="text-align: center;" class="alert alert-success" role="alert">
+                    You've successfully registered!
+                </div>
+            {% endif %}
             <form role="form" method="POST" action="{% url 'signup' %}"> {% csrf_token %}
                 	<h2>Please Sign Up <small>It&apos;s free and always will be.</small></h2>
                 <hr class="colorgraph">
