@@ -12,4 +12,7 @@ def custom_login(request,context):
 		return login(request)
 	else:
 		context["invalid"] = True
-		return render(request,"home.html",context)
+		return render(request,"home/home.html",context)
+
+def signup(request):
+	return render(request,"auth/signup.html")
