@@ -14,7 +14,7 @@ def home(request):
 	if request.method == "POST":
 		return auth_views.custom_login(request,context)
 	else:
-		return render(request,"home.html",context)
+		return render(request,"home/home.html",context)
 
 def redirectToHome(request):
 	return redirect("/home")
