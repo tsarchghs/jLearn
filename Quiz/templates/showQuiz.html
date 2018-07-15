@@ -14,20 +14,22 @@
         aria-valuemax="100" style="width: 60%;"> <span class="sr-only">60% Complete</span>
         </div>
     </div> -->
-    <h2>{{ quiz.title }} </h2>
-     <h1 class="question">You are a dog.</h1>
+    <h2 style="text-align: center;">{{ quiz.title }} </h2>
+
+    {% for question,answers in question_answers.items %}
+     <h1 class="question">{{question.question}}</h1>
+    
     <div class="btn-group-lg btn-group" data-toggle="buttons">
         <row>
+        {% for answer in answers %}
             <div class="col-xl-6">
                 <label class="btn btn-primary">
-                    <input type="radio" name="options" id="option1">True</label>
+                    <input type="radio" name="options" id="option1">{{answer.answer}}</label>
             </div>
             <!--<span>or</span>-->
-            <div class="col-xl-6">
-                <label class="btn btn-primary">
-                    <input type="radio" name="options" id="option2">False</label>
-            </div>
+        {% endfor %}
         </row>
     </div>
+    {% endfor %}
 </div>
 {% endblock body %}
