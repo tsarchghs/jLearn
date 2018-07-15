@@ -12,3 +12,9 @@ def showQuiz(request,ID):
 		question_answers[question] = q_answers
 	context = {"quiz":quiz,"question_answers":question_answers}
 	return render(request,"showQuiz.html",context)
+
+def submitQuiz(request,ID):
+	quiz = Quiz.objects.get(pk=ID)
+	if request.method == "POST":
+		pass
+
