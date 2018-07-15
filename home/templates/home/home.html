@@ -20,12 +20,15 @@
 	    <div class="ui container">
 	        <div class="ui grid">
 	            <div class="wide column">
-	                <div class="ui three stackable cards">
+	                
+	               <div class="ui three stackable cards">
 
 	               {% for quiz in quizzes %}
 	                    <div class="card">
 	                        <div class="ui left piled segment">
-	                            <img class="card-img-top" src="{{ quiz.photo.url }}" class="ui left floated image">
+	                        	<a href="{% url 'showQuiz' quiz.id %}">
+	                            	<img class="card-img-top" src="{{ quiz.photo.url }}" class="ui left floated image">
+	                           	</a>
 	                            <h3 class="ui header text-center" style="margin-top: 0px;" >{{ quiz.title}}</h3>
 	                            <div class="floated right text-center description">
 	                               {{ quiz.description }}              

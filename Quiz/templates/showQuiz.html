@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div class="container">
+    <!-- -->
+    <!--Progress Bar-->
+    <!--Content-->
+    <!--Question-->
+    <!--Answers-->
+    <!--Explaination-->
+    <!-- 
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+        aria-valuemax="100" style="width: 60%;"> <span class="sr-only">60% Complete</span>
+        </div>
+    </div> -->
+    <h2 style="text-align: center;">{{ quiz.title }} </h2>
+
+<form method="POST" action="{% url 'submitQuiz' quiz.id %}"> {% csrf_token %}
+    {% for question,answers in question_answers.items %}
+     <h1 class="question">{{question.question}}</h1>
+    
+    <div class="btn-group-lg btn-group" data-toggle="buttons">
+        <row >
+        {% for answer in answers %}
+            <div class="col-xl-6">
+                <label class="btn btn-primary">
+                    <input type="checkbox" name="{{ question.question }}" value="{{ answer.correct }}">{{answer.answer}}</label>
+            </div>
+            <!--<span>or</span>-->
+
+        {% endfor %}
+        </row>
+    </div>
+    {% endfor %}
+</div>
+<button class="btn btn-primary btn-block" type="submit">Submit</button>
+</form>
+{% endblock body %}
