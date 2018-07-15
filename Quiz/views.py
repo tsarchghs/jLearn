@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import *
 # Create your views here.
 
@@ -21,5 +21,13 @@ def showQuiz(request,ID):
 def submitQuiz	(request,ID):
 	quiz = Quiz.objects.get(pk=ID)
 	if request.method == "POST":
-		pass
+		question_answers = getQuestion_answers(ID)
+		user_question_answers = {}
+		for question_answer in question_answers:
+			user_answers = request.POST.getlist(question_answer.question)
+			user_question_answers[question_answer] = user_answers
+		context = {"question_answers":question_answers,"user_question_answers":user_question_answers,"question_answers":question_answers}
+		return render(request,"submitQuiz.html",context)
+	else:
+		return redirect("/quiz/{}".format(ID))
 
