@@ -20,13 +20,14 @@
      <h1 class="question">{{question.question}}</h1>
     
     <div class="btn-group-lg btn-group" data-toggle="buttons">
-        <row>
+        <row >
         {% for answer in answers %}
             <div class="col-xl-6">
                 <label class="btn btn-primary">
-                    <input type="radio" name="options" id="option1">{{answer.answer}}</label>
+                    <input type="checkbox" name="{{ question.question }}" value="{{ answer.correct }}">{{answer.answer}}</label>
             </div>
             <!--<span>or</span>-->
+
         {% endfor %}
         </row>
     </div>
