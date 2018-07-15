@@ -18,15 +18,32 @@ def showQuiz(request,ID):
 	context = {"quiz":quiz,"question_answers":question_answers}
 	return render(request,"showQuiz.html",context)
 
-def submitQuiz	(request,ID):
+def submitQuiz(request,ID):
 	quiz = Quiz.objects.get(pk=ID)
 	if request.method == "POST":
+		correctAnswers = 0
 		question_answers = getQuestion_answers(ID)
 		user_question_answers = {}
-		for question_answer in question_answers:
-			user_answers = request.POST.getlist(question_answer.question)
-			user_question_answers[question_answer] = user_answers
-		context = {"question_answers":question_answers,"user_question_answers":user_question_answers,"question_answers":question_answers}
+		for question in question_answers:
+			user_answers = request.POST.getlist(question.question)
+			user_question_answers[question] = user_answers
+		for question,answers in user_question_answers.items():
+			if not 0 in answers:
+				user_correct_answers = len(answers)
+				current_question_correct_answers = 0
+				current_question_answers = question_answers[question]
+				for answer in current_question_answers:
+					if answer.correct == "1":
+						current_question_correct_answers += 1
+				if user_correct_answers == current_question_correct_answers:
+					correctAnswers += 1
+				
+
+		allQuestions = len(question_answers)
+		context = {"question_answers":question_answers,
+					"user_question_answers":user_question_answers,
+					"question_answers":question_answers,
+					"correctAnswers":correctAnswers}
 		return render(request,"submitQuiz.html",context)
 	else:
 		return redirect("/quiz/{}".format(ID))
