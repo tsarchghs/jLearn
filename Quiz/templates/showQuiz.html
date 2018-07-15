@@ -16,6 +16,7 @@
     </div> -->
     <h2 style="text-align: center;">{{ quiz.title }} </h2>
 
+<form method="POST" action="{% url 'submitQuiz' quiz.id %}"> {% csrf_token %}
     {% for question,answers in question_answers.items %}
      <h1 class="question">{{question.question}}</h1>
     
@@ -33,4 +34,6 @@
     </div>
     {% endfor %}
 </div>
+<button class="btn btn-primary btn-block" type="submit">Submit</button>
+</form>
 {% endblock body %}
