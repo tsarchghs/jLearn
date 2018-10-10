@@ -210,3 +210,40 @@
     font-size: 36px;
     color: #fff;
 }
+
+
+/* Adding CSS styling for the following classes.*/
+.card{
+    width: 16rem;
+    height: 18rem;
+}
+.label-Text{
+    font-family: 'Niramit', sans-serif;
+    position: relative;
+    padding-left: 20%;
+    padding-top: 10%;
+}
+ .label-Desc{
+    color: #fff;
+    padding-left: 10%;
+    padding-top: 8%;
+    height: 6rem;
+}
+ .displayCards{
+    display: flex;
+}
+ .card{
+    margin-left: 18%;
+}
+ .desc1{
+    background-color: #2cbd6d;
+}
+.desc2{
+    background-color: #1870a3;
+} 
+
+.quizText{
+    text-align: center;
+    font-family: 'Niramit', sans-serif;
+    letter-spacing: 3px;
+}
