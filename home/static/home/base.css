@@ -210,3 +210,39 @@
     font-size: 36px;
     color: #fff;
 }
+
+
+/* Adding CSS styling for the following classes.*/
+.card{
+    width: 18rem;
+    height: 20rem;
+}
+.label-Text{
+    font-family: 'Niramit', sans-serif;
+    position: relative;
+    padding-left: 20%;
+    padding-top: 10%;
+}
+
+.label-Desc{
+    
+    color: #fff;
+    padding-left: 15%;
+    padding-top: 8%;
+    height: 6rem;
+}
+
+.displayCards{
+    display: flex;
+}
+
+.card{
+    margin-left: 15%;
+}
+
+.desc1{
+    background-color: #2cbd6d;
+}
+.desc2{
+    background-color: #1870a3;
+}
