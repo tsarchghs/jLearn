@@ -40,7 +40,7 @@ def submitQuiz(request,ID):
 				
 
 		allQuestions = len(question_answers)
-		context = {"correctAnswers":correctAnswers,"allQuestions":allQuestions}
+		context = {"correctAnswers":correctAnswers,"allQuestions":allQuestions,"quiz":quiz}
 		return render(request,"submitQuiz.html",context)
 	else:
 		return redirect("/quiz/{}".format(ID))
