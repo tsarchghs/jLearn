@@ -3,8 +3,14 @@
 
 <div class="container">
     <br><br><br>
-    <div class="displayCards">
 
+    <div class="page-header quizText">
+        <h1 class="display-5">{{quiz}}</h1>
+    </div>
+
+    <br>
+  
+    <div class="displayCards">
         <div class="card">
             <div class="card-body">
                 <p class="card-text label-Text"><span class="display-1 label-Text">{{correctAnswers}}</span></p>
@@ -15,18 +21,24 @@
                 </li>
             </ul>
         </div>
-      
+
         <div class="card">
             <div class="card-body">
                 <p class="card-text label-Text"><span class="display-1 label-Text">{{allQuestions}}</span></p>
             </div>
             <ul class="list-group list-group-flush ">
                 <li class="list-group-item label-Desc desc2">
-                    <h3 class="card-title">All questions</h3>
+                    <h3 class="card-title">&emsp;All questions</h3>
                 </li>
             </ul>
         </div>
-
+    </div>
+  
+    <br>
+    <br>
+  
+    <div class="col-sm-12 text-center">
+        <a href="{% url 'showQuiz' quiz.id %}"><button type="button" class="btn btn-outline-info btn-lg retakeButton">Retake Test</button></a>
     </div>
 </div>
 

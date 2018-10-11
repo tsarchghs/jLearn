@@ -214,8 +214,10 @@
 
 /* Adding CSS styling for the following classes.*/
 .card{
-    width: 18rem;
-    height: 20rem;
+
+    width: 16rem;
+    height: 18rem;
+
 }
 .label-Text{
     font-family: 'Niramit', sans-serif;
@@ -224,25 +226,30 @@
     padding-top: 10%;
 }
 
-.label-Desc{
-    
+ .label-Desc{
     color: #fff;
-    padding-left: 15%;
+    padding-left: 10%;
     padding-top: 8%;
     height: 6rem;
 }
-
-.displayCards{
+ .displayCards{
     display: flex;
 }
-
-.card{
-    margin-left: 15%;
+ .card{
+    margin-left: 18%;
 }
+ .desc1{
 
-.desc1{
     background-color: #2cbd6d;
 }
 .desc2{
     background-color: #1870a3;
+
+} 
+
+.quizText{
+    text-align: center;
+    font-family: 'Niramit', sans-serif;
+    letter-spacing: 3px;
 }
+
