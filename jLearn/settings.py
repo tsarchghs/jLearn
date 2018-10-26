@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'home',
 	'bootstrapform',
 	'Quiz',
+    'api',
     "authentication",
     'django.contrib.admin',
     'django.contrib.auth',
